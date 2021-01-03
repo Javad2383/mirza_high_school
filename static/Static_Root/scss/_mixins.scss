@@ -1,0 +1,43 @@
+$color-orange: #f45d48;
+$color-light-gray: #fffffe;
+$color-black: #232323;
+$color-green: #078080;
+$color-red: #d9376e;
+$color-yellow: #fde24f;
+$color-light-gray-2: #fafafa;
+$color-light-blue: #00ebc7;
+$color-pink: #fbebf0;
+$color-title: #d9376e;
+
+@font-face {
+  font-family: IRANSANS;
+  src: url("../fonts/IRANSANSWEB.TTF");
+}
+
+@mixin d-all-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+@mixin cut-middle{
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+@mixin transition-c($time: .3s){
+  transition: all $time;
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  -o-transition: all $time;
+}
+
+@mixin border-top-radius($radius){
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius){
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}

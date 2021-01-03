@@ -1,0 +1,31 @@
+{% extends '_mainLayout.html' %}
+{% load static %}
+
+{% block moreCss %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+{% endblock %}
+
+{% block mainBlock %}
+    <main>
+        <div class="container mt-5 pt-5 ">
+        <h1 class="text-center">{{ images.first.image_group }}</h1>
+            <div class="row mt-5">
+                {% for image in images %}
+                    <div class="col-12 col-md-4 mt-3">
+                        <a data-fancybox="gallery" href="{{ image.image.url }}">
+                            <img class="img-fluid w-100 h-100" src="{{ image.image.url }}" alt="{{ image.image_alt }}"></a>
+                    </div>
+                {% endfor %}
+                {% if images|length < 1 %}
+                    <div class="alert alert-danger text-center col-12">
+                    <p>متاسفانه هیچ عکسی برای نمایش وجود ندارد</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block moreJs %}
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{% endblock %}

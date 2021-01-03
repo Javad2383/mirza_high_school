@@ -1,0 +1,330 @@
+@import "mixins";
+
+//////////////////////////////////////////// Common
+body {
+  font-family: IRANSANS, serif;
+  font-size: 12px;
+  //overflow-x: hidden;
+  direction: rtl;
+  color: $color-black;
+  background: $color-light-gray-2;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-light-gray-2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparentize($color-orange, .5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $color-orange;
+}
+
+p{
+  margin: 0;
+}
+
+a:hover{
+  text-decoration: none !important;
+  color: transparentize($color-red, .5);
+}
+
+.btn:focus, .form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.f-12{
+  font-size: 1.2em;
+}
+
+.f-2{
+  font-size: 2em;
+}
+
+.lh-2{
+  line-height: 2;
+}
+
+.lh-25{
+  line-height: 2.5;
+}
+
+.main-title{
+  font-size: 4.5em;
+}
+
+.main-sub-title {
+  font-size: 3.5em;
+  color: $color-title;
+}
+
+.text-title{
+  //color: #ff8e3c;
+  color: $color-title;
+}
+
+.bg-title{
+  background: transparentize($color-title, .9);
+}
+
+textarea{
+  resize: none !important;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.mt-50{
+  margin-top: 50px;
+}
+
+.container-box {
+  width: 90%;
+  margin: auto;
+}
+
+.btn-orange {
+  border: 1px solid $color-orange;
+  background: transparent;
+  color: $color-orange;
+}
+
+.btn-orange:hover {
+  background: $color-orange;
+  color: #ffffff;
+}
+
+.w-80{
+  width: 80% !important;
+}
+
+.w-15{
+  width: 15% !important;
+}
+
+.item-border {
+  border: 1px solid transparentize($color-orange, .7);
+  border-radius: 15px;
+}
+
+.input-orange {
+  border: 1px solid $color-orange;
+  color: $color-orange;
+}
+
+.input-orange::placeholder{
+  color: $color-orange;
+}
+
+.input-orange:focus {
+  border: 1px solid $color-black;
+  background: transparentize(#000000, .9);
+  color: $color-orange;
+}
+
+.w-25-100{
+  width: 25%;
+}
+
+.w-75-100{
+  width: 75%;
+}
+
+.blog-item{
+  overflow: hidden;
+  height: 200px;
+}
+
+main{
+  min-height: 100vh;
+}
+
+//////////////////////////////////////////// Header
+.navbar-nav {
+  position: relative;
+  background: #ffffff;
+  font-size: 1.5em;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+}
+
+.header-mobile {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.navbar-mobile {
+  width: 65%;
+  height: 100%;
+  position: fixed;
+  z-index: 23;
+  background: #ffffff;
+  font-size: 1.8em;
+  line-height: 3;
+  padding: 10px 15px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: transparentize($color-black, .9);
+  z-index: 10;
+}
+
+.brand-logo {
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  top: 23px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+//////////////////////////////////////////// Sub Header
+.sub-header {
+  position: relative;
+}
+
+//////////////////////////////////////////// About Us
+.about-us{
+  position: relative;
+  overflow-x: hidden;
+}
+
+.about-us:before{
+    position: absolute;
+    content: '';
+    width: 500px;
+    height: 500px;
+    border: 1px solid $color-orange;
+    background: #fccec8;
+    border-radius: 50%;
+    bottom: 50px;
+    right: -250px;
+}
+
+.about-us:after {
+  position: absolute;
+  content: '';
+  width: 500px;
+  height: 450px;
+  border: 1px solid $color-orange;
+  background: #fccec8;
+  border-radius: 50%;
+  top: 0;
+  left: -250px;
+  //@include cut-middle();
+}
+
+//////////////////////////////////////////// Cards
+.card{
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.card-img-top{
+  @include border-top-radius(20px)
+}
+
+.owl-item {
+  .card-img-zoom{
+    @include transition-c(.5s);
+  }
+  &:hover{
+    .card-img-zoom {
+      transform: scale(1.15);
+    }
+  }
+}
+
+.slider-link {
+  font-size: 2em;
+  text-decoration: none !important;
+}
+
+//////////////////////////////////////////// Sub Header
+footer{
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+  position: relative;
+  overflow: hidden;
+}
+
+footer:before {
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 200px;
+  border: 1px solid $color-orange;
+  background: #fccec8;
+  border-radius: 50%;
+  left: -100px;
+  bottom: -125px;
+}
+
+footer:after {
+  position: absolute;
+  content: '';
+  width: 200px;
+  height: 200px;
+  border: 1px solid $color-orange;
+  background: #fccec8;
+  border-radius: 50%;
+  right: -100px;
+  bottom: -125px;
+}
+
+//////////////////////////////////////////// Media
+@media (max-width: 1025px) {
+  .about-us:before{
+    display: none;
+  }
+
+  .about-us:after {
+    left: -175px;
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (max-width: 766px) {
+  .about-us:after{
+    display: none;
+  }
+
+  .about-us:before{
+    display: none;
+  }
+
+  footer:after {
+    right: -125px;
+    bottom: -140px;
+  }
+
+  footer:before {
+    left: -125px;
+    bottom: -140px;
+  }
+
+  .w-25-100{
+    width: 100%;
+  }
+
+  .w-75-100{
+    width: 100%;
+  }
+
+  .blog-item{
+    height: auto;
+  }
+}
