@@ -1,0 +1,19 @@
+body {
+    font-family: IRANSANS, serif;
+    font-size: 15px;
+    direction: rtl;
+    color: #232323;
+    background: #fafafa
+}
+
+.navbar-nav {
+    font-size: 1.5em;
+}
+
+.navbar-nav li {
+    margin: 0 50px;
+}
+
+.navbar-nav li:hover{
+    color: #d9376e;
+}
